@@ -23,7 +23,7 @@ const Footer = () => {
     
      
         </div>
-           <div className="border border-[#1A8862] mr-18  md:w-[1400px] ml-20 mr-5 my-3"></div>
+          
         <div className='text-center md:flex justify-evenly text-white'>
            <p>© 2026 KeenKeeper. All rights reserved.</p>
            <div className='flex justify-center md:items-center gap-5 text-white'>
