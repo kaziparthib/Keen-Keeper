@@ -7,6 +7,7 @@ import HomePage from './Pages/HomePage/HomePage';
 import Main from './Main/Main';
 import Timeline from './Pages/Timeline/Timeline';
 import Stats from './Pages/Stats/Stats';
+import FriendDetails from './Pages/FriendDetails/FriendDetails';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
        path:'/stats',
        element:<Stats></Stats>
+      },{
+        path:'/friendDetails/:fId',
+        loader:()=> fetch('/data.json'),
+        element:<FriendDetails></FriendDetails>
       }
     ]
   }
