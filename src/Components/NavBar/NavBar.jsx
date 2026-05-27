@@ -1,11 +1,14 @@
+import { ImStatsDots } from "react-icons/im";
+import { IoMdTime } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
 import { NavLink } from "react-router";
 
 
 const NavBar = () => {
   const links=<>
-  <li><NavLink className={({isActive})=>`font-bold mr-1 ${isActive ? "text-white  bg-[#244D3F]":"text-black"}`} to={'/'}>HOME</NavLink></li>
-  <li><NavLink className={({isActive})=>`font-bold mr-1 ${isActive ? "text-white  bg-[#244D3F]":"text-black"}`} to={'/timeline'}>Timeline</NavLink></li>
-  <li><NavLink className={({isActive})=>`font-bold mr-1 ${isActive ? "text-white  bg-[#244D3F]":"text-black"}`} to={'/stats'}>Stats</NavLink></li>
+  <li><NavLink className={({isActive})=>`font-bold mr-1 ${isActive ? "text-white  bg-[#244D3F]":"text-black"}`} to={'/'}><IoHomeOutline/>HOME</NavLink></li>
+  <li><NavLink className={({isActive})=>`font-bold mr-1 ${isActive ? "text-white  bg-[#244D3F]":"text-black"}`} to={'/timeline'}><IoMdTime/>Timeline</NavLink></li>
+  <li><NavLink className={({isActive})=>`font-bold mr-1 ${isActive ? "text-white  bg-[#244D3F]":"text-black"}`} to={'/stats'}><ImStatsDots/>Stats</NavLink></li>
   </>
   return (
      <div className="navbar bg-base-100 shadow-sm justify-between px-7 ">

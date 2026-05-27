@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { TimelineContext } from '../../Context/Context';
+import { toast } from 'react-toastify';
 
 const FriendDetails = () => {
   const {fId}=useParams()
   const data=useLoaderData()
   const eData=data.find(d=>d.id===Number(fId))
-  console.log(eData);
+  
+  const {Timeline,setTimeline}=useContext(TimelineContext)
+    
+  const handleData=(type,fDetails)=>{
+    toast.success(`${type==='call'?'call':type==='text'?'text':'video-call'} added to timeline`)
+    const newD={
+      ...fDetails,
+      action:type,
+      time:new Date().toISOString(),
+    }
+    setTimeline([...Timeline,newD])
+  }
   return (
     <div className='container mx-auto mx-[40px] space-y-4 lg:flex items-center justify-center gap-3  my-8 '>
       <div className=' flex flex-col justify-center items-center space-y-7'>
@@ -28,9 +41,9 @@ const FriendDetails = () => {
              <p>"{eData.bio}"</p>
              <p>Prefered:email</p>
         </div>
-        <div><button className='card bg-base-100 p-5 shadow-sm '>Snooze 2 Weeks</button></div>
-        <div><button className='card bg-base-100 p-5 shadow-sm '>Archive</button></div>
-        <div><button className='card bg-base-100 p-5 shadow-sm '>Delete</button></div>
+        <div><button className=' bg-base-100 p-5 shadow-sm '>Snooze 2 Weeks</button></div>
+        <div><button className=' bg-base-100 p-5 shadow-sm '>Archive</button></div>
+        <div><button className=' bg-base-100 p-5 shadow-sm '>Delete</button></div>
       </div>
       {/* another part */}
       <div className='space-y-7'>
@@ -67,9 +80,9 @@ const FriendDetails = () => {
         <div className='card bg-base-100 p-5 shadow-sm'>
           <p>Quick Check-In</p>
           <div className='flex items-center justify-center gap-2.5'>
-            <button className='card bg-base-100 p-5 shadow-sm'>Call</button>
-            <button className='card bg-base-100 p-5 shadow-sm'>Text</button>
-            <button className='card bg-base-100 p-5 shadow-sm'>Video</button>
+            <button onClick={()=>handleData("call",eData)} className='card btn bg-base-100 p-5 shadow-sm'>Call</button>
+            <button onClick={()=>handleData("text",eData)} className='card btn bg-base-100 p-5 shadow-sm'>Text</button>
+            <button onClick={()=>handleData("video-call",eData)} className='card btn bg-base-100 p-5 shadow-sm'>Video</button>
           </div>
         </div>
       </div>
