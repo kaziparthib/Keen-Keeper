@@ -40,10 +40,14 @@ const Timeline = () => {
     }
 
   return (
-    < div className='container mx-auto my-4 space-y-4'>
-      {
+    < div className='container mx-auto '>
+      <div className='mx-[30px] my-4 space-y-4'>
+          {
         Timeline.map((t,index)=>(<TimelineCard t={t} key={index}></TimelineCard>))
       }
+
+      </div>
+      
     </div>
   );
 };

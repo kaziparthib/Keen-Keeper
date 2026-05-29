@@ -8,7 +8,7 @@ const HomePage = () => {
    
   <div>
    <Banner></Banner>
-   <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
+   <Suspense fallback={<div className="min-h-[70vh] flex justify-center items-center"><span className="loading loading-dots loading-xl"></span></div>}>
       <Friend dataPromise={dataPromise}></Friend>
    </Suspense>
    

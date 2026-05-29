@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { IoIosText } from 'react-icons/io';
 import { IoCallSharp } from 'react-icons/io5';
 import { MdMissedVideoCall } from 'react-icons/md';

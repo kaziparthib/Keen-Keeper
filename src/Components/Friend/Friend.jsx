@@ -24,7 +24,7 @@ const Friend = ({dataPromise}) => {
         </div>
       </div>
       <div>
-       <h2 className='font-bold text-2xl mx-[50px]'>Your Friend</h2>
+       <h2 className='font-bold text-2xl mx-[50px] mb-2.5'>Your Friend</h2>
        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-[50px]'>
         {
           data.map((d)=>{

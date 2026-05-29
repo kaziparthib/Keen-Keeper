@@ -10,6 +10,7 @@ import Stats from './Pages/Stats/Stats';
 import FriendDetails from './Pages/FriendDetails/FriendDetails';
 import TimelineContextProvider from './Context/TimelineProvider';
 import { ToastContainer } from 'react-toastify';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,8 @@ const router = createBrowserRouter([
         loader:()=> fetch('/data.json'),
         element:<FriendDetails></FriendDetails>
       }
-    ]
+    ],
+    errorElement:<ErrorPage></ErrorPage>
   }
 ]);
 
